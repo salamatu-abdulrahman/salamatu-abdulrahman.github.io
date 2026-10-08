@@ -3,13 +3,13 @@
   "data": {
     "url": "https://raw.githubusercontent.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io/refs/heads/main/diesel_price.csv"
   },
-  "title": {"text": "UK Diesel Price 1995-2026"},
+  "title": {"text": "US Diesel Prices Hit a Record High in 2026"},
   "width": 600,
   "height": 300,
-  "mark": {"type": "line", "color": "red"},
+  "mark": {"type": "line", "color": "rgba(128,0,0,.8)"},
   "encoding": {
-    "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "price", "type": "quantitative"}
+    "x": {"field": "date", "type": "temporal", "title": null},
+    "y": {"field": "price", "type": "quantitative", "title": "Price (USD per gallon)"}
   },
   "config": {}
 }

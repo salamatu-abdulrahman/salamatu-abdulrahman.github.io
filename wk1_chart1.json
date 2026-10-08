@@ -19,12 +19,14 @@
  
   "mark": {
     "type": "bar",
-    "color": "red"
+    "color": "rgba(128,0,0,.8)"
   },
  
   "encoding": {
     "x": {
-      "field": "Country"
+      "field": "Country",
+      "type": "nominal", 
+      "title": null
     },  
  
     "y": {
