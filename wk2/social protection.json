@@ -1,19 +1,22 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
   "data": {
-    "url": "https://raw.githubusercontent.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io/refs/heads/main/Social%20Protection%20CVM%20SA-091026%20-%20Social%20Protection%20CVM%20SA-091026%20(1).csv"
+    "url": "https://raw.githubusercontent.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io/refs/heads/main/wk2/Social%20Protection%20CVM%20SA.csv"
   },
-  "title": {"text": "UK Government Spending on Social Protection, 1997-2025"},
+  "title": {"text": ""},
+
   "width": 500,
+  
   "height": 300,
+  
   "mark": {"type": "line", "color": "rgba(128,0,0,.8)"},
+  
   "encoding": {
     "x": {"field": "Title", "type": "temporal", "title": null},
-    "y": {
-      "field": "Social Protection CVM SA",
-      "type": "quantitative",
-      "title": "£ million"
-    }
+
+    "y": {"field": "Social Protection CVM SA", "type": "quantitative", "title": "£ million"}
   },
+  
   "config": {}
 }
