@@ -35,7 +35,7 @@
     </p>
     <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
         This is a portfolio page that explores different public policy data and visualises them using Vega-lite. 
-        The data sources are from US government agencies, the World Bank and the IMF. The datasets, charts, and codes are available in my Github repository.  
+        The data sources are from government agencies, the World Bank and the IMF. The datasets, charts, and codes are available in my Github repository.  
     </h3>
 
     <!-- Section 1 -->
@@ -115,8 +115,28 @@
     </section>
 
     <script>
-        let figure_4_spec = "diesel.json"; 
+        let figure_4_spec = "wk2/diesel.json"; 
         vegaEmbed('#Location4', figure_4_spec)
+    </script>
+
+    <!-- Section 5 -->
+    <section>
+        <div class="chart-description">
+            <h2>UK Government Spending on Social Protection, 1997-2025</h2>
+            <p>
+                UK government spending on social protection services grew from about £38 billion in 1997 to about £68 billion in 2025. 
+                Spending rose quickly in the early 2000s, then stayed almost flat at around £50 billion from 2004 to 2016, 
+                before climbing steadily and then faster after 2021. 
+            </p>
+        </div>
+
+        <figure id="Location5"></figure> 
+        
+    </section>
+
+    <script>
+        let figure_5_spec = "wk2/social protection.json"; 
+        vegaEmbed('#Location5', figure_5_spec)
     </script>
 
 </body>
