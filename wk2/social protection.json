@@ -4,8 +4,15 @@
   "data": {
     "url": "https://raw.githubusercontent.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io/refs/heads/main/wk2/Social%20Protection%20CVM%20SA.csv"
   },
-  "title": {"text": ""},
-
+  "title": {
+    "text": "UK Government Spending on Social Protection, 1997-2025",
+    "subtitle": ["Consumer value measure (inflation-adjusted), £ million, seasonally adjusted. Source: ONS"],
+    "subtitleFontStyle": "normal",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "fontSize": 16
+    },
+    
   "width": 500,
   
   "height": 300,

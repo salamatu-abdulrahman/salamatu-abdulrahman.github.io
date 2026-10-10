@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io/refs/heads/main/diesel_price.csv"
+    "url": "https://raw.githubusercontent.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io/refs/heads/main/wk2/diesel_price.csv"
   },
   "title": {"text": "US Diesel Prices Hit a Record High in 2026"},
   "width": 600,
@@ -13,3 +13,7 @@
   },
   "config": {}
 }
+
+
+
+
