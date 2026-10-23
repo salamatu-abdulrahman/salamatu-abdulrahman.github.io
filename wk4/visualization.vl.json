@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Google's stock price over time.",
+  "data": {
+    "url": "https://api.worldbank.org/v2/country/kor;jpn;gbr;nga;chn/indicator/SP.DYN.TFRT.IN?format=json&per_page=1000",
+    "format": {"property": "[1]"}
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "axis": {"title": null}},
+    "y": {"field": "value", "type": "quantitative", "axis": {"title": null}},
+    "color": {
+      "field": "country.value",
+      "type": "nominal",
+      "scale": {"scheme": "tableau10"},
+      "legend": {"title": null}
+    }
+  },
+  "config": {}
+}
