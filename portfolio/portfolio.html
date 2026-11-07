@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salmah's Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+
+    <!-- Vega-lite packages for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+</head>
+
+<body>
+
+    <!-- Buttons at the top -->
+    <nav class="button-bar" aria-label="Main">
+        <a class="btn btn-primary" href="index.html">Home</a>
+        <a class="btn" href="https://www.linkedin.com/in/salamatuabdulrahman/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+
+    <!-- Short intro (delete this paragraph if you don't want it) -->
+    <p class="intro">
+        This is a portfolio page that explores different public policy data and visualises them using Vega-lite.
+        The data sources are from government agencies, the World Bank and the IMF. The datasets, charts, and codes are available in my Github repository.
+    </p>
+
+    <!-- ===================== CC1 ===================== -->
+    <section class="task">
+        <h2 class="task-title">CC1: Charts about GDP</h2>
+
+        <div class="charts-row">
+
+            <article class="chart-card">
+                <h3>Country GDP vs Life Expectancy</h3>
+                <figure id="Location1"></figure>
+                <p class="interpretation">
+                    Countries with higher GDP per capita tend to have higher life expectancy, and the biggest gains come at lower income levels: among wealthier countries, extra income makes smaller.
+                    European countries have life expectancy mostly above 75 years, while African countries are around 57 and 66 years.
+                    However, even countries with similar incomes can differ by 10 years or more in life expectancy.
+                    China and India, the two most populous countries, fall in the middle of the range rather than at either extreme.
+                </p>
+            </article>
+
+            <article class="chart-card">
+                <h3>GDP per capita, 1990-2022</h3>
+                <figure id="Location2"></figure>
+                <p class="interpretation">
+                    Since 1990, incomes per person have roughly tripled in the US and UK and risen more than ten times in China.
+                    India has also grown quickly, while Nigeria and the DR. Congo have seen much slower progress.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="charts-row">
+            <article class="chart-card">
+                <h3>GDP per Capita, 2022</h3>
+                <figure id="Location3"></figure>
+                <p class="interpretation">
+                    In 2022, GDP per capita ranged from about $1,300 in the DR Congo to about $76,300 in the United States, a gap of roughly 57 times.
+                    China, at about $21,500, had the third highest GDP after the US and UK in 2022.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===================== CC2 ===================== -->
+    <section class="task">
+        <h2 class="task-title">CC2: Charts about prices and public spending</h2>
+
+        <div class="charts-row">
+
+            <article class="chart-card">
+                <h3>US Weekly Diesel Prices, 1994-2026</h3>
+                <figure id="Location4"></figure>
+                <p class="interpretation">
+                    US diesel prices stayed between about $1 and $1.50 per gallon through the 1990s, then rose through the 2000s to a peak near $4.80 in mid-2008, before falling to about $2 within a year.
+                    Prices stayed high, around $4, from 2011 to 2014, then dropped to about $2 again in early 2016.
+                    A second surge took prices to almost $5.80 in mid-2022, and they then eased to around $3.50 in 2025.
+                    The latest data show another sharp rise to about $6.50, the highest over the years.
+                </p>
+            </article>
+
+            <article class="chart-card">
+                <h3>UK Government Spending on Social Protection, 1997-2025</h3>
+                <figure id="Location5"></figure>
+                <p class="interpretation">
+                    UK government spending on social protection services grew from about £38 billion in 1997 to about £68 billion in 2025.
+                    Spending rose quickly in the early 2000s, then stayed almost flat at around £50 billion from 2004 to 2016,
+                    before climbing steadily and then faster after 2021.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ===================== CC3 ===================== -->
+    <section class="task">
+        <h2 class="task-title">CC3: Policy debate</h2>
+        <p class="task-intro">
+            Should the UK prioritise job-search support over income support for under-25s on Universal Credit?
+        </p>
+
+        <div class="charts-row">
+
+            <article class="chart-card">
+                <h3>Universal Credit claimants by age</h3>
+                <figure id="Location6"></figure>
+                <p class="interpretation">
+                    Under-25s are about 9% of claimants, so youth-specific support reaches a small share of the caseload.
+                </p>
+            </article>
+
+            <article class="chart-card">
+                <h3>Claimant conditionality regime by age</h3>
+                <figure id="Location7"></figure>
+                <p class="interpretation">
+                    Over half of 16-19s are in the job-search regime, versus roughly one in six aged 35-44, so job-search support suits the youngest.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <script>
+        // Loads a chart spec and makes it fill its column
+        function embedResponsive(selector, specUrl) {
+            fetch(specUrl)
+                .then(response => response.json())
+                .then(spec => {
+                    spec.width = "container";
+                    spec.autosize = { type: "fit", contains: "padding" };
+                    vegaEmbed(selector, spec);
+                })
+                .catch(error => console.error("Could not load " + specUrl, error));
+        }
+
+        // CC1
+        embedResponsive('#Location1', "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json");
+        embedResponsive('#Location2', "wk1_chart2.json");
+        embedResponsive('#Location3', "wk1_chart1.json");
+
+        // CC2
+        embedResponsive('#Location4', "wk2/diesel.json");
+        embedResponsive('#Location5', "wk2/social protection.json");
+
+        // CC3
+        embedResponsive('#Location6', "wk3/claimantxage_chart.json");
+        embedResponsive('#Location7', "wk3/claimantxcondition_chart.json");
+    </script>
+
+</body>
+
+</html>
