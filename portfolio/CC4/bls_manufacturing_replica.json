@@ -1,0 +1,115 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Line chart of US manufacturing employment, change from January 2023 in percent, seasonally adjusted, January 2023 to October 2026.",
+  "width": 600,
+  "height": 430,
+  "background": "white",
+  "padding": {"left": 5, "right": 15, "top": 10, "bottom": 20},
+  "data": {
+    "url": "https://raw.githubusercontent.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io/refs/heads/main/portfolio/CC4/bls_manufacturing.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "date:'%Y-%m-%d'",
+        "value": "number",
+        "change": "number"
+      }
+    }
+  },
+  "mark": {"type": "line", "color": "#7030A0", "strokeWidth": 3.5},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "scale": {"nice": false},
+      "title": "Source: Bureau of Labor Statistics; Chart: @realejantoni",
+      "axis": {
+        "values": [
+          {"year": 2023, "month": 1, "date": 1},
+          {"year": 2023, "month": 3, "date": 1},
+          {"year": 2023, "month": 5, "date": 1},
+          {"year": 2023, "month": 7, "date": 1},
+          {"year": 2023, "month": 9, "date": 1},
+          {"year": 2023, "month": 11, "date": 1},
+          {"year": 2024, "month": 1, "date": 1},
+          {"year": 2024, "month": 3, "date": 1},
+          {"year": 2024, "month": 5, "date": 1},
+          {"year": 2024, "month": 7, "date": 1},
+          {"year": 2024, "month": 9, "date": 1},
+          {"year": 2024, "month": 11, "date": 1},
+          {"year": 2025, "month": 1, "date": 1},
+          {"year": 2025, "month": 3, "date": 1},
+          {"year": 2025, "month": 5, "date": 1},
+          {"year": 2025, "month": 7, "date": 1},
+          {"year": 2025, "month": 9, "date": 1},
+          {"year": 2025, "month": 11, "date": 1},
+          {"year": 2026, "month": 1, "date": 1},
+          {"year": 2026, "month": 3, "date": 1},
+          {"year": 2026, "month": 5, "date": 1},
+          {"year": 2026, "month": 7, "date": 1},
+          {"year": 2026, "month": 9, "date": 1}
+        ],
+        "format": "%b/%y",
+        "labelAngle": -45,
+        "labelAlign": "right",
+        "labelBaseline": "middle",
+        "labelFontSize": 12,
+        "labelPadding": 8,
+        "labelOverlap": false,
+        "labelFlush": false,
+        "grid": false,
+        "ticks": true,
+        "tickSize": 6,
+        "domainColor": "#bfbfbf",
+        "tickColor": "#bfbfbf",
+        "labelColor": "#595959",
+        "titleColor": "#595959",
+        "titleAnchor": "start",
+        "titleFontWeight": "normal",
+        "titleFontSize": 12,
+        "titlePadding": 12
+      }
+    },
+    "y": {
+      "field": "change",
+      "type": "quantitative",
+      "scale": {"domain": [-2.8, 0.2]},
+      "title": [
+        "Change in Manufacturing Payrolls from January 2023,",
+        "Seasonally Adjusted"
+      ],
+      "axis": {
+        "values": [
+          0.2,
+          0,
+          -0.2,
+          -0.4,
+          -0.6,
+          -0.8,
+          -1,
+          -1.2,
+          -1.4,
+          -1.6,
+          -1.8,
+          -2,
+          -2.2,
+          -2.4,
+          -2.6,
+          -2.8
+        ],
+        "labelExpr": "format(datum.value, '.1f') + '%'",
+        "gridColor": "#d9d9d9",
+        "domain": false,
+        "ticks": false,
+        "labelColor": "#595959",
+        "titleColor": "#595959",
+        "titleFontWeight": "normal",
+        "titleFontSize": 12
+      }
+    }
+  },
+  "config": {
+    "view": {"stroke": null},
+    "font": "Calibri, Carlito, Arial, sans-serif"
+  }
+}
