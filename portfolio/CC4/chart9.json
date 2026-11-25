@@ -1,0 +1,130 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Line chart of US manufacturing employment, percent change from the January 2020 level, seasonally adjusted, January 2019 to October 2026, with markers for the start of COVID-19 lockdowns and the April 2025 tariff announcement.",
+  "width": 600,
+  "height": 430,
+  "background": "transparent",
+  "padding": {"left": 5, "right": 30, "top": 10, "bottom": 10},
+  "title": {
+    "text": "US manufacturing employment, January 2019 to October 2026",
+    "subtitle": "Percent change from January 2020, seasonally adjusted. 0% is the pre-COVID level.",
+    "anchor": "start",
+    "color": "#1d3d63",
+    "subtitleColor": "#1d3d63",
+    "fontSize": 16,
+    "subtitleFontSize": 13,
+    "fontWeight": 600,
+    "offset": 12
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io/refs/heads/main/portfolio/CC4/bls_manufacturing_covid.csv",
+    "format": {"type": "csv", "parse": {"date": "date:'%Y-%m-%d'", "jobs_change": "number", "pct_change": "number"}}
+  },
+  "layer": [
+    {
+      "mark": {"type": "line", "color": "#1d3d63", "strokeWidth": 2},
+      "encoding": {
+        "x": {
+          "field": "date", "type": "temporal",
+          "scale": {"nice": false, "domain": [{"year": 2019, "month": 1, "date": 1}, {"year": 2026, "month": 10, "date": 1}]},
+          "title": ["Source: US Bureau of Labor Statistics, Current Employment Statistics.", "Hollow point: preliminary estimate, which may be revised."],
+          "axis": {
+            "tickCount": {"interval": "year", "step": 1},
+            "format": "%Y",
+            "labelAngle": 0,
+            "labelAlign": "center",
+            "labelFontSize": 12,
+            "labelOverlap": false,
+            "labelColor": "#1d3d63",
+            "grid": false,
+            "domainColor": "#dfe6ef",
+            "tickColor": "#dfe6ef",
+            "titleAnchor": "start",
+            "titleColor": "#1d3d63",
+            "titleFontWeight": "normal",
+            "titleFontSize": 12,
+            "titlePadding": 14
+          }
+        },
+        "y": {
+          "field": "pct_change", "type": "quantitative",
+          "scale": {"domain": [-12, 3]},
+          "title": null,
+          "axis": {
+            "values": [-12, -10, -8, -6, -4, -2, 0, 2],
+            "format": "d",
+            "labelExpr": "datum.label + '%'",
+            "labelColor": "#1d3d63",
+            "labelFontSize": 12,
+            "domain": false,
+            "ticks": false,
+            "gridColor": {"condition": {"test": "datum.value === 0", "value": "#1d3d63"}, "value": "#dfe6ef"},
+            "gridDash": {"condition": {"test": "datum.value === 0", "value": [1, 0]}, "value": [4, 4]}
+          }
+        }
+      }
+    },
+    {
+      "transform": [{"filter": "datum.preliminary == 'true'"}],
+      "mark": {"type": "point", "filled": true, "fill": "white", "stroke": "#1d3d63", "strokeWidth": 2.5, "size": 90},
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "scale": {"nice": false, "domain": [{"year": 2019, "month": 1, "date": 1}, {"year": 2026, "month": 10, "date": 1}]}},
+        "y": {"field": "pct_change", "type": "quantitative", "scale": {"domain": [-12, 3]}, "title": null}
+      }
+    },
+    {
+      "data": {"values": [{"date": "2020-03-13", "y": 2.3, "label": "Mar 2020: COVID-19 lockdowns begin"}], "format": {"parse": {"date": "date"}}},
+      "mark": {"type": "rule", "color": "#2f5ea8", "strokeDash": [2, 3], "strokeWidth": 1.5},
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "scale": {"nice": false, "domain": [{"year": 2019, "month": 1, "date": 1}, {"year": 2026, "month": 10, "date": 1}]}}
+      }
+    },
+    {
+      "data": {"values": [{"date": "2020-03-13", "y": 2.3, "label": "Mar 2020: COVID-19 lockdowns begin"}], "format": {"parse": {"date": "date"}}},
+      "mark": {"type": "text", "align": "left", "dx": 6, "color": "#2f5ea8", "fontSize": 12, "fontWeight": 400},
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "scale": {"nice": false, "domain": [{"year": 2019, "month": 1, "date": 1}, {"year": 2026, "month": 10, "date": 1}]}},
+        "y": {"field": "y", "type": "quantitative", "scale": {"domain": [-12, 3]}, "title": null},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    },
+    {
+      "data": {"values": [{"date": "2025-04-02", "y": -7, "label": "2 Apr 2025: US tariffs announced"}], "format": {"parse": {"date": "date"}}},
+      "mark": {"type": "rule", "color": "#2f5ea8", "strokeDash": [2, 3], "strokeWidth": 1.5},
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "scale": {"nice": false, "domain": [{"year": 2019, "month": 1, "date": 1}, {"year": 2026, "month": 10, "date": 1}]}}
+      }
+    },
+    {
+      "data": {"values": [{"date": "2025-04-02", "y": -7, "label": "2 Apr 2025: US tariffs announced"}], "format": {"parse": {"date": "date"}}},
+      "mark": {"type": "text", "align": "right", "dx": -6, "color": "#2f5ea8", "fontSize": 12, "fontWeight": 400},
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "scale": {"nice": false, "domain": [{"year": 2019, "month": 1, "date": 1}, {"year": 2026, "month": 10, "date": 1}]}},
+        "y": {"field": "y", "type": "quantitative", "scale": {"domain": [-12, 3]}, "title": null},
+        "text": {"field": "label", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.kind == 'low'"}],
+      "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 13, "fontWeight": 400, "color": "#1d3d63"},
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "scale": {"nice": false, "domain": [{"year": 2019, "month": 1, "date": 1}, {"year": 2026, "month": 10, "date": 1}]}},
+        "y": {"field": "pct_change", "type": "quantitative", "scale": {"domain": [-12, 3]}, "title": null},
+        "text": {"field": "note", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.kind == 'last'"}],
+      "mark": {"type": "text", "align": "right", "dy": 34, "fontSize": 13, "fontWeight": 400, "color": "#1d3d63"},
+      "encoding": {
+        "x": {"field": "date", "type": "temporal", "scale": {"nice": false, "domain": [{"year": 2019, "month": 1, "date": 1}, {"year": 2026, "month": 10, "date": 1}]}},
+        "y": {"field": "pct_change", "type": "quantitative", "scale": {"domain": [-12, 3]}, "title": null},
+        "text": {"field": "note", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "font": "\"Helvetica Neue\", Helvetica, Roboto, Arial, sans-serif"
+  }
+}

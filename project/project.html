@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main Project | Salamatu Abdulrahman</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Chart fonts (from my portfolio deck) -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" type="text/css" href="project.css">
+
+    <!-- Charts (Vega-Lite, made with Altair) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+</head>
+
+<body id="top">
+
+    <!-- Reading progress: fills as you scroll down the page -->
+    <div class="progress" aria-hidden="true"></div>
+
+    <!-- Header: name with icon links underneath, page links on the right -->
+    <header class="site-header">
+        <div class="brand">
+            <a class="site-name" href="home.html">Salamatu Abdulrahman</a>
+
+            <ul class="social">
+                <li>
+                    <a href="https://www.linkedin.com/in/salamatuabdulrahman/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="resume.pdf" aria-label="Resume" title="Resume" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io" aria-label="Git Repository" title="Git Repository" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <nav aria-label="Main">
+            <a href="home.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="project.html" aria-current="page">Main Project</a>
+        </nav>
+    </header>
+
+    <main class="project">
+
+        <!-- Title -->
+        <div class="project-header">
+            <h1>Youth Welfare Claims and Unemployment in the UK</h1>
+            <p class="summary">
+                Are young people claiming benefits more than other age groups? 
+                If so, is it because they can't find work, or because they aren't 
+                expected to look for it? And where is it worst?
+            </p>
+        </div>
+
+        <!-- Aim -->
+        <section class="tint-blue">
+            <h2>Aim</h2>
+            <p>
+                The UK government has been debating whether to spend more on welfare benefits, in particular for
+                young people due to the high unemployment rate among them. Some argue that young people on benefits 
+                are not looking for work, while others argue that they are not getting enough support to find work. 
+                This project aims to explore the reasons behind the high unemployment rate among young people and 
+                whether they are receiving enough support to find work, and where that help falls short.
+            </p>
+            <p>
+                The argument for spending more depends on which gap matters most: young claimants getting
+                no work-coach support, support that is mostly compliance rather than help, or too few
+                entry-level jobs in their area.
+            </p>
+        </section>
+
+        <!-- Findings -->
+        <section class="tint-white" id="findings">
+            <h2>Findings</h2>
+
+            <!-- Finding 1 (Brief chart 1: real-terms spending and youth programmes) -->
+            <article class="finding" id="finding-1">
+                <h3>1. Sub-heading for finding 1</h3>
+                <p>Explain what the charts show.</p>
+
+                <div class="charts">
+                    <figure>
+                        <div id="chart1a"></div>
+                        <figcaption>Caption for chart 1a.</figcaption>
+                    </figure>
+                    <figure>
+                        <div id="chart1b"></div>
+                        <figcaption>Caption for chart 1b.</figcaption>
+                    </figure>
+                </div>
+                <p class="source">Source: DWP Benefit expenditure and caseload, Spring Forecast 2026.
+
+                </p>
+             </article>
+
+            <!-- Finding 2 (Brief chart 2: young UC claimants by conditionality regime) -->
+            <article class="finding" id="finding-2">
+                <h3>2. Sub-heading for finding 2</h3>
+                <p>Explain what the charts show.</p>
+
+                <!-- When the charts are ready, uncomment this block and add two
+                     vegaEmbed lines for chart2a and chart2b at the bottom of the page.
+                <div class="charts">
+                    <figure>
+                        <div id="chart2a"></div>
+                        <figcaption>Caption for chart 2a.</figcaption>
+                    </figure>
+                    <figure>
+                        <div id="chart2b"></div>
+                        <figcaption>Caption for chart 2b.</figcaption>
+                    </figure>
+                </div>
+                <p class="source">Source: add source.</p>
+                -->
+            </article>
+
+            <!-- Finding 3 (Brief chart 3: 18–24 vs 25–34 unemployment and claimant rates) -->
+            <article class="finding" id="finding-3">
+                <h3>3. Sub-heading for finding 3</h3>
+                <p>Explain what the charts show.</p>
+
+                <!-- When the charts are ready, uncomment this block and add two
+                     vegaEmbed lines for chart3a and chart3b at the bottom of the page.
+                <div class="charts">
+                    <figure>
+                        <div id="chart3a"></div>
+                        <figcaption>Caption for chart 3a.</figcaption>
+                    </figure>
+                    <figure>
+                        <div id="chart3b"></div>
+                        <figcaption>Caption for chart 3b.</figcaption>
+                    </figure>
+                </div>
+                <p class="source">Source: add source.</p>
+                -->
+            </article>
+
+            <!-- Finding 4 (Brief chart 4: young claimants on UC for 12+ and 18+ months) -->
+            <article class="finding" id="finding-4">
+                <h3>4. Sub-heading for finding 4</h3>
+                <p>Explain what the charts show.</p>
+
+                <!-- When the charts are ready, uncomment this block and add two
+                     vegaEmbed lines for chart4a and chart4b at the bottom of the page.
+                <div class="charts">
+                    <figure>
+                        <div id="chart4a"></div>
+                        <figcaption>Caption for chart 4a.</figcaption>
+                    </figure>
+                    <figure>
+                        <div id="chart4b"></div>
+                        <figcaption>Caption for chart 4b.</figcaption>
+                    </figure>
+                </div>
+                <p class="source">Source: add source.</p>
+                -->
+            </article>
+
+            <!-- Finding 5 (Brief chart 5: sanction rates for young vs older claimants) -->
+            <article class="finding" id="finding-5">
+                <h3>5. Sub-heading for finding 5</h3>
+                <p>Explain what the charts show.</p>
+
+                <!-- When the charts are ready, uncomment this block and add two
+                     vegaEmbed lines for chart5a and chart5b at the bottom of the page.
+                <div class="charts">
+                    <figure>
+                        <div id="chart5a"></div>
+                        <figcaption>Caption for chart 5a.</figcaption>
+                    </figure>
+                    <figure>
+                        <div id="chart5b"></div>
+                        <figcaption>Caption for chart 5b.</figcaption>
+                    </figure>
+                </div>
+                <p class="source">Source: add source.</p>
+                -->
+            </article>
+
+            <!-- Finding 6 (Brief chart 6: early vs late UC rollout areas) -->
+            <article class="finding" id="finding-6">
+                <h3>6. Sub-heading for finding 6</h3>
+                <p>Explain what the charts show.</p>
+
+                <!-- When the charts are ready, uncomment this block and add two
+                     vegaEmbed lines for chart6a and chart6b at the bottom of the page.
+                <div class="charts">
+                    <figure>
+                        <div id="chart6a"></div>
+                        <figcaption>Caption for chart 6a.</figcaption>
+                    </figure>
+                    <figure>
+                        <div id="chart6b"></div>
+                        <figcaption>Caption for chart 6b.</figcaption>
+                    </figure>
+                </div>
+                <p class="source">Source: add source.</p>
+                -->
+            </article>
+
+            <!-- Finding 7 (Brief chart 7: youth claimants vs starter jobs by area (map)) -->
+            <article class="finding" id="finding-7">
+                <h3>7. Sub-heading for finding 7</h3>
+                <p>Explain what the charts show.</p>
+
+                <!-- When the charts are ready, uncomment this block and add two
+                     vegaEmbed lines for chart7a and chart7b at the bottom of the page.
+                <div class="charts">
+                    <figure>
+                        <div id="chart7a"></div>
+                        <figcaption>Caption for chart 7a.</figcaption>
+                    </figure>
+                    <figure>
+                        <div id="chart7b"></div>
+                        <figcaption>Caption for chart 7b.</figcaption>
+                    </figure>
+                </div>
+                <p class="source">Source: add source.</p>
+                -->
+            </article>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="tint-blush">
+            <h2>Conclusion</h2>
+            <p>
+                Summarise the main results and what they mean for policy.
+            </p>
+        </section>
+
+        <!-- Data -->
+        <section class="tint-sand">
+            <h2>Data</h2>
+            <p>
+                Describe your data sources, the time period covered, and any cleaning you did.
+            </p>
+        </section>
+
+        <!-- Tools and methodology -->
+        <section class="tint-sand">
+            <h2>Tools and methodology</h2>
+            
+            <p>
+                Explain how you analysed the data and built the charts.
+            </p>
+        </section>
+
+        <!-- Open data and code -->
+        <section class="tint-sand">
+            <h2>Open data and code</h2>
+            <p>
+                Say what is in the repository.
+            </p>
+            <a class="button" href="https://github.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                View GitHub repository
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Back to top: appears once you scroll down -->
+    <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+
+    <!-- Draw the charts. Add one line per chart. -->
+    <script>
+        const opts = { actions: false };
+        vegaEmbed('#chart1a', '/project/chart1a.json', opts);
+        vegaEmbed('#chart1b', '/project/chart1b.json', opts);
+    </script>
+
+    <!-- Page interactions: progress bar, back-to-top button, and sections
+         fading in as you scroll. -->
+    <script>
+        // Fill the progress bar and show the back-to-top button as you scroll
+        const progress = document.querySelector('.progress');
+        const topButton = document.querySelector('.back-to-top');
+
+        function onScroll() {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = (scrollable > 0 ? window.scrollY / scrollable * 100 : 0) + '%';
+            topButton.classList.toggle('show', window.scrollY > 600);
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        // Fade sections in as they come into view
+        document.documentElement.classList.add('js');
+        const sectionWatcher = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    sectionWatcher.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.project section').forEach(s => sectionWatcher.observe(s));
+    </script>
+
+</body>
+
+</html>

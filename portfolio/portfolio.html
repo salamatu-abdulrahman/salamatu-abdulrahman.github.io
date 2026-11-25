@@ -7,6 +7,10 @@
     <title>Salmah's Portfolio</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" type="text/css" href="portfolio.css">
 
     <!-- Vega-lite packages for graphs -->
@@ -17,13 +21,36 @@
 
 <body>
 
-    <!-- Buttons at the top -->
-    <nav class="button-bar" aria-label="Main">
-        <a class="btn btn-primary" href="index.html">Home</a>
-        <a class="btn" href="https://www.linkedin.com/in/salamatuabdulrahman/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-    </nav>
+    <!-- Header: name with icon links underneath, page links on the right -->
+    <header class="site-header">
+        <div class="brand">
+            <a class="site-name" href="home.html">Salamatu Abdulrahman</a>
+
+            <ul class="social">
+                <li>
+                    <a href="https://www.linkedin.com/in/salamatuabdulrahman/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="resume.pdf" aria-label="Resume" title="Resume" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io" aria-label="Git Repository" title="Git Repository" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <nav aria-label="Main">
+            <a href="home.html">Home</a>
+            <a href="portfolio.html" aria-current="page">Portfolio</a>
+            <a href="project.html">Main Project</a>
+        </nav>
+    </header>
 
     <!-- Short intro (delete this paragraph if you don't want it) -->
     <p class="intro">
@@ -103,27 +130,43 @@
 
     <!-- ===================== CC3 ===================== -->
     <section class="task">
-        <h2 class="task-title">CC3: Policy debate</h2>
+        <h2 class="task-title">CC3: The Manufacturing Industry vs Employment debate</h2>
         <p class="task-intro">
-            Should the UK prioritise job-search support over income support for under-25s on Universal Credit?
+            xxxx
+        </p>
+
+        <div class="charts-row">
+            <article class="chart-card">
+                <figure id="Location6"></figure>
+            </article>
+
+            <article class="chart-card">
+                <figure id="Location7"></figure>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===================== CC4 ===================== -->
+    <section class="task">
+        <h2 class="task-title">CC4: Improved Chart to Provide Real Context</h2>
+        <p class="task-intro">
+            Extended chart timeline to 2019, rebased employment to Jan-2020, and flagged Mar-2020 lockdown, Apr-2025
+            tariff announcement and preliminary points, providing more context and clearer data limitations.
         </p>
 
         <div class="charts-row">
 
             <article class="chart-card">
-                <h3>Universal Credit claimants by age</h3>
-                <figure id="Location6"></figure>
+                <h3>Replicated Chart</h3>
+                <figure id="Location8"></figure>
                 <p class="interpretation">
-                    Under-25s are about 9% of claimants, so youth-specific support reaches a small share of the caseload.
+                    Source: Twitter user @
                 </p>
             </article>
 
             <article class="chart-card">
-                <h3>Claimant conditionality regime by age</h3>
-                <figure id="Location7"></figure>
-                <p class="interpretation">
-                    Over half of 16-19s are in the job-search regime, versus roughly one in six aged 35-44, so job-search support suits the youngest.
-                </p>
+                <h3>Improved Chart</h3>
+                <figure id="Location9"></figure>
             </article>
 
         </div>
@@ -144,16 +187,20 @@
 
         // CC1
         embedResponsive('#Location1', "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json");
-        embedResponsive('#Location2', "wk1_chart2.json");
-        embedResponsive('#Location3', "wk1_chart1.json");
+        embedResponsive('#Location2', "/portfolio/CC1/wk1_chart1.json");
+        embedResponsive('#Location3', "/portfolio/CC1/wk1_chart2.json");
 
         // CC2
         embedResponsive('#Location4', "wk2/diesel.json");
         embedResponsive('#Location5', "wk2/social protection.json");
 
         // CC3
-        embedResponsive('#Location6', "wk3/claimantxage_chart.json");
-        embedResponsive('#Location7', "wk3/claimantxcondition_chart.json");
+        embedResponsive('#Location6', "/portfolio/CC3/CC3_chart1.json");
+        embedResponsive('#Location7', "/portfolio/CC3/CC3_chart2.json");
+
+        // CC4
+        embedResponsive('#Location8', "/portfolio/CC4/chart8.json");
+        embedResponsive('#Location9', "/portfolio/CC4/chart9.json");
     </script>
 
 </body>

@@ -7,17 +7,43 @@
     <title>Salamatu Abdulrahman | Home</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 
 <body>
 
-    <!-- Top bar: name + page links -->
+    <!-- Top bar: name with icon links underneath, page links on the right -->
     <header class="site-header">
-        <a class="site-name" href="home.html">Salamatu Abdulrahman</a>
-        <nav>
+        <div class="brand">
+            <a class="site-name" href="home.html">Salamatu Abdulrahman</a>
+
+            <ul class="social">
+                <li>
+                    <a href="https://www.linkedin.com/in/salamatuabdulrahman/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="resume.pdf" aria-label="Resume" title="Resume" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io" aria-label="Git Repository" title="Git Repository" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <nav aria-label="Main">
             <a href="home.html" aria-current="page">Home</a>
             <a href="portfolio.html">Portfolio</a>
+            <a href="project.html">Main Project</a>
         </nav>
     </header>
 
@@ -30,20 +56,33 @@
                 Showcasing my coursework tasks on coding and data visualizations:
                 getting data → analyzing → policy implication.
             </p>
-            <a class="button" href="portfolio.html">View the portfolio</a>
+            <a class="button" href="portfolio.html">View my portfolio</a>
         </section>
 
         <section class="block main-project">
             <h2>Main Project</h2>
-            <p>Will add soon.</p>
+            <p>
+                An in-depth project that takes one public policy question from raw data
+                to evidence-based recommendation, with the data, method, findings and charts in one place.
+            </p>
+            <a class="button" href="project.html">View my main project</a>
         </section>
 
         <section class="block stack">
             <h2>Stack</h2>
-            <ul class="tags">
-                <li>Python</li>
-                <li>Vega-Lite</li>
-                <li>Altair</li>
+            <ul class="stack-list">
+                <li>
+                    <i class="fa-brands fa-python" aria-hidden="true"></i>
+                    <span>Python</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                    <span>Vega-Lite</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+                    <span>Altair</span>
+                </li>
             </ul>
         </section>
 
@@ -54,15 +93,6 @@
                 Write two or three sentences about yourself here: your background,
                 what you are studying, and the kind of public policy questions you like to explore with data.
             </p>
-        </section>
-
-        <section class="block links">
-            <h2>Find me</h2>
-            <ul class="link-list">
-                <li><a href="https://www.linkedin.com/in/salamatuabdulrahman/">LinkedIn</a></li>
-                <li><a href="resume.pdf">Resume</a></li>
-                <li><a href="https://github.com/salamatu-abdulrahman/salamatu-abdulrahman.github.io">Git Repository</a></li>
-            </ul>
         </section>
 
     </main>

@@ -5,7 +5,6 @@
   --text: #26406b;
   --muted: #4d6485;
   --bg: #f0f3f8;
-  --card: #dfe6ef;
   --line: #c9d5e5;
   --link: #2f5ea8;
   --accent: #c0341d;
@@ -58,16 +57,44 @@ a:focus-visible,
 .site-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding-bottom: 16px;
   margin-bottom: 48px;
   border-bottom: 1px solid var(--line);
+}
+
+/* Name with the icon links underneath */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .site-name {
   font-weight: 600;
   font-size: 1.1em;
   color: var(--navy);
+}
+
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 18px;
+}
+
+.social a {
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--navy);
+  transition: color 0.15s ease;
+}
+
+.social a:hover {
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .site-header nav {
@@ -85,7 +112,7 @@ a:focus-visible,
 
 /* ---------- Home layout ----------
    Portfolio     |  About me
-   Main Project  |  Find me (links)
+   Main Project  |
    Stack         |
 */
 
@@ -94,9 +121,9 @@ a:focus-visible,
   grid-template-columns: 1fr 1.4fr;
   grid-template-areas:
     "portfolio about"
-    "project   links"
-    "stack     links";
-  gap: 32px 64px;
+    "project   about"
+    "stack     about";
+  gap: 40px 64px;
   align-items: start;
 }
 
@@ -104,30 +131,16 @@ a:focus-visible,
 .main-project { grid-area: project; }
 .stack        { grid-area: stack; }
 .about        { grid-area: about; }
-.links        { grid-area: links; }
 
-/* ---------- Blocks ---------- */
+/* ---------- Blocks (no backgrounds or outlines) ---------- */
 
 .block h2 {
   font-size: 2em;
   line-height: 1.2;
 }
 
-.portfolio {
-  background: var(--card);
-  border-radius: 14px;
-  padding: 28px;
-  box-shadow: 0 4px 16px rgba(29, 61, 99, 0.12);
-}
-
 .portfolio p {
   font-size: 1.15em;
-}
-
-.main-project {
-  border: 2px dashed #9fb2cc;
-  border-radius: 14px;
-  padding: 24px 28px;
 }
 
 .main-project p {
@@ -148,7 +161,7 @@ a:focus-visible,
   color: #fff;
   font-weight: 600;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 0;
   transition: background 0.15s ease;
 }
 
@@ -157,46 +170,30 @@ a:focus-visible,
   text-decoration: none;
 }
 
-/* ---------- Stack tags ---------- */
+/* ---------- Stack: icons with small names underneath ---------- */
 
-.tags {
+.stack-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 28px;
 }
 
-.tags li {
-  background: var(--card);
-  color: var(--navy);
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: 999px;
-}
-
-/* ---------- Links ---------- */
-
-.link-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.stack-list li {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px 32px;
-}
-
-.link-list a {
-  font-size: 1.35em;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--navy);
-  border-bottom: 3px solid var(--accent);
+  color: var(--muted);
 }
 
-.link-list a:hover {
-  text-decoration: none;
-  background: #fbeae6;
+.stack-list i {
+  font-size: 1.9rem;
+  color: var(--navy);
 }
 
 /* ---------- Phones and small tablets: one column ---------- */
@@ -208,6 +205,8 @@ a:focus-visible,
 
   .site-header {
     margin-bottom: 32px;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .home {
@@ -216,8 +215,7 @@ a:focus-visible,
       "about"
       "portfolio"
       "project"
-      "stack"
-      "links";
-    gap: 28px;
+      "stack";
+    gap: 32px;
   }
 }

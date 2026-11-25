@@ -4,6 +4,7 @@
   --muted: #4d6485;
   --bg: #f0f3f8;
   --card: #dfe6ef;
+  --line: #c9d5e5;
   --link: #2f5ea8;
   --accent: #c0341d;
   --accent-dark: #9e2a17;
@@ -17,7 +18,7 @@ body {
   background-color: var(--bg);
   margin: 0 auto;
   max-width: 1300px;
-  padding: 32px 40px 40px;
+  padding: 24px 40px 40px;
   box-sizing: border-box;
 }
 
@@ -43,62 +44,88 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* The chart sits on a white panel inside the card */
+/* The white chart panel: no padding, so the chart fills it */
 figure {
   margin: 0;
   width: 100%;
-  overflow: hidden;
+  padding: 0;
   background: #fff;
-  border-radius: 6px;
-  padding: 8px;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
   box-sizing: border-box;
 }
 
-/* ---------- Top buttons ---------- */
+/* ---------- Site header (same on every page) ---------- */
 
-.button-bar {
+.site-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--line);
 }
 
-.btn {
-  display: inline-block;
-  padding: 10px 22px;
-  border: 2px solid var(--accent);
-  border-radius: 8px;
-  background: #fff;
-  color: var(--accent);
+/* Name with the icon links underneath */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-name {
   font-weight: 600;
-  transition: background 0.15s ease, color 0.15s ease;
+  font-size: 1.1em;
+  color: var(--navy);
 }
 
-.btn:hover {
-  background: #fbeae6;
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 18px;
+}
+
+.social a {
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--navy);
+  transition: color 0.15s ease;
+}
+
+.social a:hover {
+  color: var(--accent);
   text-decoration: none;
 }
 
-/* Home button is filled red */
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
+.site-header nav {
+  display: flex;
+  gap: 24px;
 }
 
-.btn-primary:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
+/* The page you are on: red and underlined */
+.site-header nav a[aria-current="page"] {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
 }
 
-.btn:focus-visible {
-  outline: 3px solid var(--navy);
-  outline-offset: 3px;
-}
+/* ---------- Intro ---------- */
 
 .intro {
   font-size: 1.2em;
@@ -107,7 +134,7 @@ figure {
   color: var(--muted);
 }
 
-/* ---------- Task sections (CC1, CC2, CC3) ---------- */
+/* ---------- Task sections (CC1, CC2, CC3, CC4) ---------- */
 
 .task {
   margin-bottom: 4em;
@@ -122,7 +149,7 @@ figure {
 
 .task-intro {
   font-size: 1.1em;
-  font-style: italic;
+  font-style: normal;
   color: var(--muted);
 }
 
@@ -142,8 +169,8 @@ figure {
   min-width: 0;
   box-sizing: border-box;
   background: var(--card);
-  border-radius: 14px;
-  padding: 24px;
+  border-radius: 0;
+  padding: 16px;
   box-shadow: 0 4px 16px rgba(29, 61, 99, 0.12);
 }
 
@@ -154,12 +181,24 @@ figure {
 .chart-card h3 {
   font-size: 1.3em;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
+
+/* ---------- Make the chart fill the white panel ---------- */
 
 .vega-embed {
   width: 100%;
   display: block;
+  padding-right: 0 !important;    /* removes the 38px Vega reserves for the "..." menu */
+}
+
+/* The "..." menu floats over the chart's top-right corner */
+.vega-embed .vega-actions-wrapper,
+.vega-embed details {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
 }
 
 .vega-embed canvas,
@@ -168,16 +207,30 @@ figure {
 }
 
 .interpretation {
-  margin: 16px 0 0;
+  margin: 14px 0 0;
   padding-left: 14px;
   border-left: 3px solid var(--accent);
+}
+
+.method-note {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #1d3d63;
+  max-width: 60rem;
+  margin: 1rem auto 0;
 }
 
 /* ---------- Phones and small tablets ---------- */
 
 @media (max-width: 900px) {
   body {
-    padding: 24px 20px 20px;
+    padding: 20px 20px 20px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
   }
 
   .charts-row {
@@ -189,6 +242,6 @@ figure {
   }
 
   .chart-card {
-    padding: 18px;
+    padding: 12px;
   }
 }

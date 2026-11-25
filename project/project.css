@@ -1,0 +1,420 @@
+:root {
+  --navy: #1d3d63;
+  --text: #26406b;
+  --muted: #4d6485;
+  --bg: #faf8f4;              /* off-white */
+  --line: #e2ddd3;
+  --header-line: #c9d5e5;
+  --link: #2f5ea8;
+  --accent: #c0341d;
+  --accent-dark: #9e2a17;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--bg);
+  margin: 0 auto;
+  max-width: 1300px;          /* same width as the other pages, so the header lines up */
+  padding: 24px 40px 80px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--navy);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0 0 1em;
+  font-weight: 300;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+/* ---------- Site header (same on every page) ---------- */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--header-line);
+}
+
+/* Name with the icon links underneath */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-name {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: var(--navy);
+}
+
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 18px;
+}
+
+.social a {
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--navy);
+  transition: color 0.15s ease;
+}
+
+.social a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 24px;
+}
+
+/* The page you are on: red and underlined */
+.site-header nav a[aria-current="page"] {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- Project content ---------- */
+
+/* One column, as wide as the header; charts sit inside it */
+.project {
+  max-width: 1220px;              /* full width, lined up with the header */
+  margin: 0 auto;
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+.project-header {
+  margin-bottom: 56px;
+}
+
+h1 {
+  font-size: 2.4em;
+  margin: 0 0 12px;
+}
+
+.summary {
+  font-size: 1.25em;
+  color: var(--muted);
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0 0 12px;
+}
+
+/* Finding sub-headings */
+h3 {
+  font-size: 1.2em;
+  margin: 36px 0 8px;
+}
+
+/* ---------- Section blocks: one soft tint each ---------- */
+
+.project section {
+  margin-bottom: 20px;
+  padding: 28px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(29, 61, 99, 0.08);
+}
+
+.project section > :last-child {
+  margin-bottom: 0;
+}
+
+.tint-blue  { background: #edf1f7; }   /* pale navy */
+.tint-white { background: #ffffff; }   /* findings: lets the charts stand out */
+.tint-blush { background: #f6ece8; }   /* pale version of the accent red */
+.tint-sand  { background: #f2eee5; }
+
+/* First sub-heading sits close to the section title */
+.project section h2 + h3 {
+  margin-top: 16px;
+}
+
+/* ---------- Charts: two side by side, stacked on smaller screens ---------- */
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;             /* each box keeps its own height */
+  margin: 24px 0 8px;
+}
+
+figure {
+  margin: 0;
+  min-width: 0;                   /* lets the grid columns stay equal */
+  padding: 8px;
+  background: #F3F1EC;            /* same warm paper as the charts */
+  border: 1px solid var(--line);
+  overflow-x: auto;               /* scrolls sideways on small phones */
+  position: relative;
+}
+
+figcaption {
+  margin: 8px 4px 0;
+  font-size: 0.85em;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.source {
+  font-size: 0.85em;
+  color: var(--muted);
+}
+
+.vega-embed {
+  display: block;
+  padding-right: 0 !important;    /* removes the 38px Vega reserves for the "..." menu */
+}
+
+.vega-embed .vega-actions-wrapper,
+.vega-embed details {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+}
+
+/* The dropdown under the interactive chart */
+.vega-bind {
+  margin: 8px 4px 0;
+  font-size: 0.85em;
+  color: var(--text);
+}
+
+.vega-bind-name {
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.vega-bind select {
+  font: inherit;
+  color: var(--navy);
+  padding: 4px 8px;
+  border: 1px solid var(--header-line);
+  border-radius: 4px;
+  background: #fff;
+  max-width: 100%;
+}
+
+/* ---------- Data sources ---------- */
+
+.data-list {
+  margin: 0;
+  padding-left: 20px;
+  font-weight: 300;
+}
+
+.data-list li {
+  margin-bottom: 8px;
+}
+
+.data-list a {
+  font-weight: 600;
+}
+
+/* ---------- Tools: icons with small names underneath ---------- */
+
+.stack-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.stack-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.stack-list i {
+  font-size: 1.9rem;
+  color: var(--navy);
+}
+
+/* ---------- Button: View GitHub repository ---------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 12px 22px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.button i {
+  font-size: 1.2em;
+}
+
+.button:hover {
+  background: var(--accent-dark);
+  text-decoration: none;
+}
+
+/* ---------- Reading progress bar ---------- */
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 0;
+  height: 4px;
+  background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+/* Each finding, separated by a thin line */
+.finding {
+  padding-top: 8px;
+}
+
+.finding + .finding {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.finding h3 {
+  margin-top: 8px;
+}
+
+/* ---------- Sections fade in as you scroll ---------- */
+
+.js .project section {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.js .project section.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .progress { transition: none; }
+  .js .project section { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Back-to-top button ---------- */
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #fff;
+  background: var(--navy);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(29, 61, 99, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, background 0.15s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--accent);
+  text-decoration: none;
+}
+
+/* Smaller laptops and tablets: not enough room for two charts side by side */
+@media (max-width: 1240px) {
+  .charts {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
+
+/* ---------- Phones and small tablets ---------- */
+
+@media (max-width: 900px) {
+  body {
+    padding: 20px 20px 60px;
+  }
+
+  .site-header {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    font-size: 1.9em;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;   /* charts stack on small screens */
+  }
+
+  .project section {
+    padding: 20px 16px;
+  }
+}
