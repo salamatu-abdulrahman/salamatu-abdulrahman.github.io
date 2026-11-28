@@ -19,7 +19,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
 </head>
 
-<body>
+<body id="top">
+
+    <!-- Reading progress: fills as you scroll down the page -->
+    <div class="progress" aria-hidden="true"></div>
 
     <!-- Header: name with icon links underneath, page links on the right -->
     <header class="site-header">
@@ -52,125 +55,192 @@
         </nav>
     </header>
 
-    <!-- Short intro (delete this paragraph if you don't want it) -->
-    <p class="intro">
-        This is a portfolio page that explores different public policy data and visualises them using Vega-lite.
-        The data sources are from government agencies, the World Bank and the IMF. The datasets, charts, and codes are available in my Github repository.
-    </p>
+    <!-- Each task is a full-width band; .inner keeps its content in a centred column -->
+    <main class="portfolio">
 
-    <!-- ===================== CC1 ===================== -->
-    <section class="task">
-        <h2 class="task-title">CC1: Charts about GDP</h2>
-
-        <div class="charts-row">
-
-            <article class="chart-card">
-                <h3>Country GDP vs Life Expectancy</h3>
-                <figure id="Location1"></figure>
-                <p class="interpretation">
-                    Countries with higher GDP per capita tend to have higher life expectancy, and the biggest gains come at lower income levels: among wealthier countries, extra income makes smaller.
-                    European countries have life expectancy mostly above 75 years, while African countries are around 57 and 66 years.
-                    However, even countries with similar incomes can differ by 10 years or more in life expectancy.
-                    China and India, the two most populous countries, fall in the middle of the range rather than at either extreme.
+        <!-- Title and short intro (delete the paragraph if you don't want it) -->
+        <div class="page-header">
+            <div class="inner">
+                <h1>Portfolio</h1>
+                <p class="intro">
+                    This is a portfolio page that explores different public policy data and visualises them using Vega-lite.
+                    The data sources are from government agencies, the World Bank and the IMF. The datasets, charts, and codes are available in my Github repository.
                 </p>
-            </article>
-
-            <article class="chart-card">
-                <h3>GDP per capita, 1990-2022</h3>
-                <figure id="Location2"></figure>
-                <p class="interpretation">
-                    Since 1990, incomes per person have roughly tripled in the US and UK and risen more than ten times in China.
-                    India has also grown quickly, while Nigeria and the DR. Congo have seen much slower progress.
-                </p>
-            </article>
-
+            </div>
         </div>
 
-        <div class="charts-row">
-            <article class="chart-card">
-                <h3>GDP per Capita, 2022</h3>
-                <figure id="Location3"></figure>
-                <p class="interpretation">
-                    In 2022, GDP per capita ranged from about $1,300 in the DR Congo to about $76,300 in the United States, a gap of roughly 57 times.
-                    China, at about $21,500, had the third highest GDP after the US and UK in 2022.
+        <!-- ===================== CC1 ===================== -->
+        <section class="band band-white">
+            <div class="inner">
+                <h2 class="task-title">CC1: Charts about GDP</h2>
+
+                <div class="charts-row">
+
+                    <article class="chart-card">
+                        <h3>Country GDP vs Life Expectancy</h3>
+                        <figure id="Location1"></figure>
+                        <p class="interpretation">
+                            Countries with higher GDP per capita tend to have higher life expectancy, and the biggest gains come at lower income levels: among wealthier countries, extra income makes smaller.
+                            European countries have life expectancy mostly above 75 years, while African countries are around 57 and 66 years.
+                            However, even countries with similar incomes can differ by 10 years or more in life expectancy.
+                            China and India, the two most populous countries, fall in the middle of the range rather than at either extreme.
+                        </p>
+                    </article>
+
+                    <article class="chart-card">
+                        <h3>GDP per capita, 1990-2022</h3>
+                        <figure id="Location2"></figure>
+                        <p class="interpretation">
+                            Since 1990, incomes per person have roughly tripled in the US and UK and risen more than ten times in China.
+                            India has also grown quickly, while Nigeria and the DR. Congo have seen much slower progress.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="charts-row">
+                    <article class="chart-card">
+                        <h3>GDP per Capita, 2022</h3>
+                        <figure id="Location3"></figure>
+                        <p class="interpretation">
+                            In 2022, GDP per capita ranged from about $1,300 in the DR Congo to about $76,300 in the United States, a gap of roughly 57 times.
+                            China, at about $21,500, had the third highest GDP after the US and UK in 2022.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CC2 ===================== -->
+        <section class="band band-tint">
+            <div class="inner">
+                <h2 class="task-title">CC2: Charts about prices and public spending</h2>
+
+                <div class="charts-row">
+
+                    <article class="chart-card">
+                        <h3>US Weekly Diesel Prices, 1994-2026</h3>
+                        <figure id="Location4"></figure>
+                        <p class="interpretation">
+                            US diesel prices stayed between about $1 and $1.50 per gallon through the 1990s, then rose through the 2000s to a peak near $4.80 in mid-2008, before falling to about $2 within a year.
+                            Prices stayed high, around $4, from 2011 to 2014, then dropped to about $2 again in early 2016.
+                            A second surge took prices to almost $5.80 in mid-2022, and they then eased to around $3.50 in 2025.
+                            The latest data show another sharp rise to about $6.50, the highest over the years.
+                        </p>
+                    </article>
+
+                    <article class="chart-card">
+                        <h3>UK Government Spending on Social Protection, 1997-2025</h3>
+                        <figure id="Location5"></figure>
+                        <p class="interpretation">
+                            UK government spending on social protection services grew from about £38 billion in 1997 to about £68 billion in 2025.
+                            Spending rose quickly in the early 2000s, then stayed almost flat at around £50 billion from 2004 to 2016,
+                            before climbing steadily and then faster after 2021.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CC3 ===================== -->
+        <section class="band band-white">
+            <div class="inner">
+                <h2 class="task-title">CC3: The Manufacturing Industry vs Employment debate</h2>
+                <p class="task-intro">
+                    xxxx
                 </p>
-            </article>
-        </div>
-    </section>
 
-    <!-- ===================== CC2 ===================== -->
-    <section class="task">
-        <h2 class="task-title">CC2: Charts about prices and public spending</h2>
+                <div class="charts-row">
+                    <article class="chart-card">
+                        <figure id="Location6"></figure>
+                    </article>
 
-        <div class="charts-row">
+                    <article class="chart-card">
+                        <figure id="Location7"></figure>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-            <article class="chart-card">
-                <h3>US Weekly Diesel Prices, 1994-2026</h3>
-                <figure id="Location4"></figure>
-                <p class="interpretation">
-                    US diesel prices stayed between about $1 and $1.50 per gallon through the 1990s, then rose through the 2000s to a peak near $4.80 in mid-2008, before falling to about $2 within a year.
-                    Prices stayed high, around $4, from 2011 to 2014, then dropped to about $2 again in early 2016.
-                    A second surge took prices to almost $5.80 in mid-2022, and they then eased to around $3.50 in 2025.
-                    The latest data show another sharp rise to about $6.50, the highest over the years.
+        <!-- ===================== CC4 ===================== -->
+        <section class="band band-tint">
+            <div class="inner">
+                <h2 class="task-title">CC4: Improved Chart to Provide Real Context</h2>
+                <p class="task-intro">
+                    I extended chart timeline to 2019, rebased employment to Jan-2020, and flagged Mar-2020 lockdown, Apr-2025
+                    tariff announcement and preliminary points, providing more context and clearer data limitations.
                 </p>
-            </article>
 
-            <article class="chart-card">
-                <h3>UK Government Spending on Social Protection, 1997-2025</h3>
-                <figure id="Location5"></figure>
-                <p class="interpretation">
-                    UK government spending on social protection services grew from about £38 billion in 1997 to about £68 billion in 2025.
-                    Spending rose quickly in the early 2000s, then stayed almost flat at around £50 billion from 2004 to 2016,
-                    before climbing steadily and then faster after 2021.
-                </p>
-            </article>
+                <div class="charts-row">
 
-        </div>
-    </section>
+                    <article class="chart-card">
+                        <h3>Replicated Chart</h3>
+                        <figure id="Location8"></figure>
+                        <p class="credit">
+                            Source: Twitter: https://x.com/RealEJAntoni/status/2118706532938285537
+                        </p>
+                    </article>
 
-    <!-- ===================== CC3 ===================== -->
-    <section class="task">
-        <h2 class="task-title">CC3: The Manufacturing Industry vs Employment debate</h2>
-        <p class="task-intro">
-            xxxx
-        </p>
+                    <article class="chart-card">
+                        <h3>Improved Chart</h3>
+                        <figure id="Location9"></figure>
+                    </article>
 
-        <div class="charts-row">
-            <article class="chart-card">
-                <figure id="Location6"></figure>
-            </article>
+                </div>
+            </div>
+        </section>
 
-            <article class="chart-card">
-                <figure id="Location7"></figure>
-            </article>
-        </div>
-    </section>
+        <!-- ===================== CC5 ===================== -->
+        <section class="band band-white">
+            <div class="inner">
+                <h2 class="task-title">CC5: Accessing data: API and scraper</h2>
 
-    <!-- ===================== CC4 ===================== -->
-    <section class="task">
-        <h2 class="task-title">CC4: Improved Chart to Provide Real Context</h2>
-        <p class="task-intro">
-            Extended chart timeline to 2019, rebased employment to Jan-2020, and flagged Mar-2020 lockdown, Apr-2025
-            tariff announcement and preliminary points, providing more context and clearer data limitations.
-        </p>
+                <div class="charts-row">
 
-        <div class="charts-row">
+                    <!-- (1) API: live chart -->
+                    <article class="chart-card">
+                        <h3>World Bank API data</h3>
+                        <figure id="Location10"></figure>
+                        <p class="interpretation">
+                            I used a live connection to the World Bank API for unemployment rate of youth (15-24 years) in the UK with the series ID SL.UEM.1524.ZS, 
+                            selected the years 1991 to 2030, and built the chart in Vega-Lite.
+                        <p class="interpretation">
+                            Full URL used in the chart: 
+                            https://api.worldbank.org/v2/country/GBR/indicator/SL.UEM.1524.ZS?format=json&amp;date=1991:2030&amp;per_page=1000
+                        </p>    
+                        </p>
+                    </article>
 
-            <article class="chart-card">
-                <h3>Replicated Chart</h3>
-                <figure id="Location8"></figure>
-                <p class="interpretation">
-                    Source: Twitter user @
-                </p>
-            </article>
+                    <!-- (2) Scraper: chart built from the scraped, tidy data -->
+                    <article class="chart-card">
+                        <h3>Scraped Data from Vision of Britain Site</h3>
+                        <figure id="Location11"></figure>
+                        <p class="interpretation">
+                            On the Vision of Britain site, I scraped the data from a table "Great Britain Country (Dep): Standard Industrial Classification (2007)",
+                            cleaned the column format to the right data types, split industry naming into distinct codes and industry columns, then noted where data was missing in a year
+                            as not comaprable to other years, 
+                            reshaped to long format, then exported the cleaned data to a CSV file, and built the chart with Altair.
+                        </p>
+                        <p class="interpretation">
+                            <a href="https://colab.research.google.com/drive/1Gh9Jt3hhBfvdWB0s28u1YB693iDRcFJL#scrollTo=320666bb" target="_blank" rel="noopener">Google Colab notebook (scraper, cleaning and charting)</a>
+                        </p>
+                        <p class="credit">
+                            This work is based on data provided through
+                            <a href="https://www.visionofbritain.org.uk/unit/10090283/cube/INDUSTRY_GEN_2021" target="_blank" rel="noopener">www.VisionofBritain.org.uk.</a>
+                            Materials of GB Historical GIS / University of Portsmouth, Great Britain Country (Dep) through time | Historical Statistics on Industry | 
+                            Standard Industrial Classification (2007), A Vision of Britain through Time.
+                        </p>
+                    </article>
 
-            <article class="chart-card">
-                <h3>Improved Chart</h3>
-                <figure id="Location9"></figure>
-            </article>
+                </div>
+            </div>
+        </section>
 
-        </div>
-    </section>
+    </main>
+
+    <!-- Back to top: appears once you scroll down -->
+    <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
 
     <script>
         // Loads a chart spec and makes it fill its column
@@ -201,6 +271,36 @@
         // CC4
         embedResponsive('#Location8', "/portfolio/CC4/chart8.json");
         embedResponsive('#Location9', "/portfolio/CC4/chart9.json");
+
+        // CC5
+        embedResponsive('#Location10', "/portfolio/CC5/CC5api.json");
+        embedResponsive('#Location11', "/portfolio/CC5/CC5scraper.json");
+    </script>
+
+    <!-- Page interactions: progress bar, back-to-top button, and sections
+         fading in as you scroll (same as the project page) -->
+    <script>
+        const progress = document.querySelector('.progress');
+        const topButton = document.querySelector('.back-to-top');
+
+        function onScroll() {
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.width = (scrollable > 0 ? window.scrollY / scrollable * 100 : 0) + '%';
+            topButton.classList.toggle('show', window.scrollY > 600);
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+
+        document.documentElement.classList.add('js');
+        const sectionWatcher = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    sectionWatcher.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05 });
+        document.querySelectorAll('.portfolio section').forEach(s => sectionWatcher.observe(s));
     </script>
 
 </body>

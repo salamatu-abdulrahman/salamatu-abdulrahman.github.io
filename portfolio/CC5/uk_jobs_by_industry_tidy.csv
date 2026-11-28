@@ -1,0 +1,181 @@
+year,code,industry,jobs,share_pct,comparable
+1841,A,"Agriculture, forestry & fishing",1457404,22.801790031042206,True
+1841,B,Mining & quarrying,214887,3.3620109828164093,True
+1841,C,Manufacturing,2160820,33.8070733543181,True
+1841,D,"Electricity, gas, steam etc",1311,0.020511228685180176,True
+1841,E,"Water, sewerage & waste mgt",2851,0.04460527305983881,True
+1841,F,Construction,369834,5.786231693024352,True
+1841,G,Wholesale & retail trade,283351,4.433163355586947,True
+1841,H,Transport & storage,205186,3.21023414873942,True
+1841,I,Accommodation & catering,79367,1.2417350778464493,True
+1841,J,Information & communication,1021,0.015974038510731474,True
+1841,K,Financial & insurance,5445,0.08518965689611446,True
+1841,L,Real estate activities,5784,0.0904934757552114,True
+1841,M,"Professional, scientific & technical",30371,0.4751689751316607,True
+1841,N,Administrative & support,150714,2.3579933791443515,True
+1841,O,Public administration & defence,86141,1.3477175821282268,True
+1841,P,Education,58835,0.9205020134954811,True
+1841,Q,Human health & social work,39407,0.6165415627741382,True
+1841,"R, S, T, U",Other services,1238892,19.383064171045188,True
+1861,A,"Agriculture, forestry & fishing",1845296,21.75158837743856,True
+1861,B,Mining & quarrying,331853,3.9117463311133376,True
+1861,C,Manufacturing,2941289,34.67070195084576,True
+1861,D,"Electricity, gas, steam etc",9307,0.10970707844639593,True
+1861,E,"Water, sewerage & waste mgt",7844,0.09246183768491778,True
+1861,F,Construction,522449,6.158413390699594,True
+1861,G,Wholesale & retail trade,481373,5.674226439559145,True
+1861,H,Transport & storage,439960,5.186067071373843,True
+1861,I,Accommodation & catering,196498,2.3162374020156773,True
+1861,J,Information & communication,17131,0.20193316437791003,True
+1861,K,Financial & insurance,14552,0.17153297577650733,True
+1861,L,Real estate activities,85756,1.0108563682442389,True
+1861,M,"Professional, scientific & technical",56310,0.6637590617080215,True
+1861,N,Administrative & support,88939,1.0483762597984323,True
+1861,O,Public administration & defence,173857,2.0493546295750575,True
+1861,P,Education,99652,1.174656686509106,True
+1861,Q,Human health & social work,55455,0.6536806742500147,True
+1861,"R, S, T, U",Other services,1115979,13.154700300583485,True
+1881,A,"Agriculture, forestry & fishing",1365201,12.536307468785287,True
+1881,B,Mining & quarrying,530530,4.8717274609487236,True
+1881,C,Manufacturing,3870896,35.5454928876342,True
+1881,D,"Electricity, gas, steam etc",19147,0.17582222625447233,True
+1881,E,"Water, sewerage & waste mgt",8963,0.08230504068098582,True
+1881,F,Construction,789423,7.249078671148708,True
+1881,G,Wholesale & retail trade,650007,5.968855581604993,True
+1881,H,Transport & storage,676485,6.211996590993718,True
+1881,I,Accommodation & catering,190038,1.7450725561679332,True
+1881,J,Information & communication,24685,0.226676328150188,True
+1881,K,Financial & insurance,44824,0.4116078482075766,True
+1881,L,Real estate activities,13535,0.12428860042587786,True
+1881,M,"Professional, scientific & technical",91831,0.8432616524350786,True
+1881,N,Administrative & support,248009,2.2774060955316986,True
+1881,O,Public administration & defence,230924,2.120518711839336,True
+1881,P,Education,179011,1.6438143074131377,True
+1881,Q,Human health & social work,82640,0.758862943420358,True
+1881,"R, S, T, U",Other services,1873828,17.206905028357728,True
+1911,A,"Agriculture, forestry & fishing",1504797,8.31629460366571,True
+1911,B,Mining & quarrying,1165052,6.4386861886287265,True
+1911,C,Manufacturing,6084603,33.62669588944435,True
+1911,D,"Electricity, gas, steam etc",84987,0.46968257478034425,True
+1911,E,"Water, sewerage & waste mgt",32349,0.17877747904466984,True
+1911,F,Construction,1050719,5.80682228212113,True
+1911,G,Wholesale & retail trade,1537539,8.497244006085586,True
+1911,H,Transport & storage,1616000,8.930860494487819,True
+1911,I,Accommodation & catering,441139,2.437964645840261,True
+1911,J,Information & communication,72355,0.3998715415090756,True
+1911,K,Financial & insurance,161267,0.8912457174285687,True
+1911,L,Real estate activities,1837,0.010152221985380027,True
+1911,M,"Professional, scientific & technical",121299,0.6703616628223255,True
+1911,N,Administrative & support,621555,3.43503774421496,True
+1911,O,Public administration & defence,536499,2.964973839376374,True
+1911,P,Education,300238,1.659272087341605,True
+1911,Q,Human health & social work,215495,1.1909379840715673,True
+1911,"R, S, T, U",Other services,2546831,14.075119037151552,True
+1931,A,"Agriculture, forestry & fishing",1176473,6.256846990493894,True
+1931,B,Mining & quarrying,1072409,5.703402478619201,True
+1931,C,Manufacturing,6114090,32.51662011462126,True
+1931,D,"Electricity, gas, steam etc",197621,1.0510095506725559,True
+1931,E,"Water, sewerage & waste mgt",47858,0.25452363400694855,True
+1931,F,Construction,946353,5.032997714350325,True
+1931,G,Wholesale & retail trade,2702845,14.37456499556001,True
+1931,H,Transport & storage,1519067,8.078867757533398,True
+1931,I,Accommodation & catering,609710,3.2426262044042087,True
+1931,J,Information & communication,32848,0.17469581532576053,True
+1931,K,Financial & insurance,306202,1.6284768644781578,True
+1931,L,Real estate activities,74751,0.39754891900316386,True
+1931,M,"Professional, scientific & technical",206325,1.0973001125513742,True
+1931,N,Administrative & support,2203,0.011716234813767976,True
+1931,O,Public administration & defence,907230,4.8249295098024145,True
+1931,P,Education,411769,2.189914794839049,True
+1931,Q,Human health & social work,344984,1.8347315256436365,True
+1931,"R, S, T, U",Other services,2130231,11.329226783280873,True
+1951,A,"Agriculture, forestry & fishing",1119757,5.072908072186475,True
+1951,B,Mining & quarrying,840874,3.8094662523134306,True
+1951,C,Manufacturing,8000343,36.24447499319992,True
+1951,D,"Electricity, gas, steam etc",321286,1.45554289268163,True
+1951,E,"Water, sewerage & waste mgt",35106,0.1590429984203523,True
+1951,F,Construction,1410465,6.389921459777878,True
+1951,G,Wholesale & retail trade,2930142,13.27461315665151,True
+1951,H,Transport & storage,1700510,7.703931215284944,True
+1951,I,Accommodation & catering,875101,3.964527059780343,True
+1951,J,Information & communication,0,0.0,False
+1951,K,Financial & insurance,434535,1.9686022138263481,True
+1951,L,Real estate activities,0,0.0,False
+1951,M,"Professional, scientific & technical",299606,1.3573245765603619,True
+1951,N,Administrative & support,0,0.0,False
+1951,O,Public administration & defence,1698787,7.69612539615778,True
+1951,P,Education,516754,2.341084304839934,True
+1951,Q,Human health & social work,631421,2.8605676837457206,True
+1951,"R, S, T, U",Other services,1258589,5.701867724573371,True
+1971,A,"Agriculture, forestry & fishing",587618,2.6427155345987696,True
+1971,B,Mining & quarrying,386139,1.7365967921582293,True
+1971,C,Manufacturing,7498317,33.72245033209678,True
+1971,D,"Electricity, gas, steam etc",313974,1.4120465459875533,True
+1971,E,"Water, sewerage & waste mgt",41539,0.18681483649530528,True
+1971,F,Construction,1651750,7.428474594504452,True
+1971,G,Wholesale & retail trade,3273578,14.722379903816377,True
+1971,H,Transport & storage,1539759,6.924813448257655,True
+1971,I,Accommodation & catering,612930,2.7565521012317933,True
+1971,J,Information & communication,381400,1.7152839172659293,True
+1971,K,Financial & insurance,628110,2.8248216603930327,True
+1971,L,Real estate activities,79747,0.3586490470639907,True
+1971,M,"Professional, scientific & technical",523761,2.3555291551943376,True
+1971,N,Administrative & support,165562,0.7445879284488248,True
+1971,O,Public administration & defence,1695715,7.626199967925,True
+1971,P,Education,1198926,5.391972956979474,True
+1971,Q,Human health & social work,887111,3.989636159228358,True
+1971,"R, S, T, U",Other services,769450,3.460475118354141,True
+1991,A,"Agriculture, forestry & fishing",446695,1.9357654105140496,True
+1991,B,Mining & quarrying,148477,0.6434292769269737,True
+1991,C,Manufacturing,4758739,20.622129985480512,True
+1991,D,"Electricity, gas, steam etc",212034,0.9188553331757374,True
+1991,E,"Water, sewerage & waste mgt",168749,0.7312785620139812,True
+1991,F,Construction,1737957,7.5314857913358475,True
+1991,G,Wholesale & retail trade,3661002,15.865055663087244,True
+1991,H,Transport & storage,1238846,5.368574163027766,True
+1991,I,Accommodation & catering,1075857,4.662256723848294,True
+1991,J,Information & communication,511434,2.2163136971778115,True
+1991,K,Financial & insurance,1070158,4.637559946238248,True
+1991,L,Real estate activities,265743,1.1516048030227226,True
+1991,M,"Professional, scientific & technical",879404,3.8109220946455573,True
+1991,N,Administrative & support,816534,3.5384731723182017,True
+1991,O,Public administration & defence,1562488,6.7710859193482715,True
+1991,P,Education,1457487,6.316061117482602,True
+1991,Q,Human health & social work,2166857,9.390136066287381,True
+1991,"R, S, T, U",Other services,897424,3.8890122740687953,True
+2011,A,"Agriculture, forestry & fishing",269188,0.9268528009159862,True
+2011,B,Mining & quarrying,80458,0.2770284063780645,True
+2011,C,Manufacturing,2572394,8.857120614438523,True
+2011,D,"Electricity, gas, steam etc",171236,0.5895900493991181,True
+2011,E,"Water, sewerage & waste mgt",206822,0.7121177392418908,True
+2011,F,Construction,2243572,7.724939418758195,True
+2011,G,Wholesale & retail trade,4596746,15.827254205980044,True
+2011,H,Transport & storage,1438427,4.952709979134209,True
+2011,I,Accommodation & catering,1643013,5.657128850436785,True
+2011,J,Information & communication,1124370,3.8713667911121874,True
+2011,K,Financial & insurance,1258993,4.334893042719662,True
+2011,L,Real estate activities,414021,1.4255335434270382,True
+2011,M,"Professional, scientific & technical",1877058,6.462979273896901,True
+2011,N,Administrative & support,1403052,4.830908792482489,True
+2011,O,Public administration & defence,1766940,6.083827243601099,True
+2011,P,Education,2840017,9.778584896425608,True
+2011,Q,Human health & social work,3695277,12.723367451782483,True
+2011,"R, S, T, U",Other services,1441647,4.963796899869715,True
+2021,A,"Agriculture, forestry & fishing",280661,0.9225569060366682,True
+2021,B,Mining & quarrying,84153,0.27661816680516255,True
+2021,C,Manufacturing,2251196,7.3998753536904776,True
+2021,D,"Electricity, gas, steam etc",181589,0.5968986998916576,True
+2021,E,"Water, sewerage & waste mgt",222767,0.7322543363241435,True
+2021,F,Construction,2599780,8.54570101715596,True
+2021,G,Wholesale & retail trade,4452909,14.637095819878192,True
+2021,H,Transport & storage,1511075,4.967033812283709,True
+2021,I,Accommodation & catering,1546763,5.084343345359686,True
+2021,J,Information & communication,1360544,4.472225436262083,True
+2021,K,Financial & insurance,1160396,3.814321703184003,True
+2021,L,Real estate activities,457170,1.5027572079226665,True
+2021,M,"Professional, scientific & technical",1982432,6.516424912432023,True
+2021,N,Administrative & support,1580978,5.196811000431266,True
+2021,O,Public administration & defence,1886726,6.201831038508873,True
+2021,P,Education,2949444,9.695076733740757,True
+2021,Q,Human health & social work,4477071,14.716518397164165,True
+2021,"R, S, T, U",Other services,1436426,4.721656112928504,True

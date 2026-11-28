@@ -1,0 +1,219 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "UK youth (15-24) and total unemployment from 1991, live from the World Bank API, with internet, smartphone and AI era markers.",
+  "width": 560,
+  "height": 320,
+  "title": {
+    "text": [
+      "Youth unemployment in the UK across",
+      "the internet, smartphone and AI eras"
+    ],
+    "subtitle": [
+      "Unemployment rate (% of labour force), ILO modelled estimates.",
+      "Live data from the World Bank API."
+    ],
+    "anchor": "start",
+    "fontSize": 17,
+    "color": "#1d3d63",
+    "subtitleColor": "#4d6485",
+    "subtitleFontSize": 12
+  },
+  "config": {
+    "font": "Helvetica Neue, Helvetica, Roboto, Arial, sans-serif",
+    "view": {"stroke": null},
+    "axis": {
+      "grid": false,
+      "labelColor": "#26406b",
+      "titleColor": "#26406b",
+      "domainColor": "#4d6485",
+      "tickColor": "#4d6485"
+    },
+    "legend": {
+      "orient": "top",
+      "title": null,
+      "labelColor": "#26406b",
+      "labelFontSize": 12
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": [1991, 2026]},
+      "axis": {"format": "d", "tickCount": 8}
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {"year": 1991, "label": "World Wide Web"},
+          {"year": 2007, "label": "Smartphones"},
+          {"year": 2022.9, "label": "Generative AI"}
+        ]
+      },
+      "layer": [
+        {"mark": {"type": "rule", "color": "#4d6485", "strokeDash": [3, 3]}},
+        {
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "dx": 4,
+            "dy": 4,
+            "fontSize": 11,
+            "color": "#4d6485"
+          },
+          "encoding": {"text": {"field": "label"}, "y": {"value": 0}},
+          "transform": [{"filter": "datum.year < 2020"}]
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "top",
+            "dx": -4,
+            "dy": 4,
+            "fontSize": 11,
+            "color": "#4d6485"
+          },
+          "encoding": {"text": {"field": "label"}, "y": {"value": 0}},
+          "transform": [{"filter": "datum.year >= 2020"}]
+        }
+      ]
+    },
+    {
+      "data": {
+        "url": "https://api.worldbank.org/v2/country/GBR/indicator/SL.UEM.1524.ZS?format=json&date=1991:2030&per_page=100",
+        "format": {"type": "json", "property": "1"}
+      },
+      "transform": [
+        {"filter": "datum.value != null"},
+        {"calculate": "toNumber(datum.date)", "as": "year"},
+        {"calculate": "'Young people (15–24)'", "as": "series"}
+      ],
+      "layer": [
+        {
+          "params": [
+            {
+              "name": "highlight",
+              "select": {"type": "point", "fields": ["series"]}
+            }
+          ],
+          "mark": {"type": "line", "strokeWidth": 3},
+          "encoding": {
+            "y": {
+              "field": "value",
+              "type": "quantitative",
+              "title": "Unemployment rate (%)",
+              "scale": {"zero": true}
+            },
+            "color": {
+              "field": "series",
+              "type": "nominal",
+              "scale": {
+                "domain": ["Young people (15–24)", "Everyone (15+)"],
+                "range": ["#c0341d", "#1d3d63"]
+              }
+            },
+            "opacity": {
+              "condition": {"param": "highlight", "value": 1},
+              "value": 0.15
+            }
+          }
+        },
+        {
+          "mark": {"type": "circle", "size": 70, "opacity": 0},
+          "encoding": {
+            "y": {"field": "value", "type": "quantitative"},
+            "tooltip": [
+              {"field": "series", "title": "Group"},
+              {"field": "date", "title": "Year"},
+              {
+                "field": "value",
+                "type": "quantitative",
+                "title": "Unemployment rate (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {"joinaggregate": [{"op": "max", "field": "year", "as": "latest"}]},
+            {"filter": "datum.year == datum.latest"},
+            {
+              "calculate": "'Youth ' + format(datum.value, '.1f') + '% (' + datum.date + ')'",
+              "as": "label"
+            }
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "circle",
+                "size": 60,
+                "color": "#c0341d",
+                "opacity": 1
+              },
+              "encoding": {"y": {"field": "value", "type": "quantitative"}}
+            },
+            {
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "dx": -6,
+                "dy": 0,
+                "fontSize": 12,
+                "fontWeight": 600,
+                "color": "#c0341d",
+                "baseline": "top"
+              },
+              "encoding": {"y": {"value": 22}, "text": {"field": "label"}}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "data": {
+        "url": "https://api.worldbank.org/v2/country/GBR/indicator/SL.UEM.TOTL.ZS?format=json&date=1991:2030&per_page=100",
+        "format": {"type": "json", "property": "1"}
+      },
+      "transform": [
+        {"filter": "datum.value != null"},
+        {"calculate": "toNumber(datum.date)", "as": "year"},
+        {"calculate": "'Everyone (15+)'", "as": "series"}
+      ],
+      "layer": [
+        {
+          "mark": {"type": "line", "strokeWidth": 2.5},
+          "encoding": {
+            "y": {"field": "value", "type": "quantitative"},
+            "color": {"field": "series", "type": "nominal"},
+            "opacity": {
+              "condition": {"param": "highlight", "value": 1},
+              "value": 0.15
+            }
+          }
+        },
+        {
+          "mark": {"type": "circle", "size": 70, "opacity": 0},
+          "encoding": {
+            "y": {"field": "value", "type": "quantitative"},
+            "tooltip": [
+              {"field": "series", "title": "Group"},
+              {"field": "date", "title": "Year"},
+              {
+                "field": "value",
+                "type": "quantitative",
+                "title": "Unemployment rate (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
